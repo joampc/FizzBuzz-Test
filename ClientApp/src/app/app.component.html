@@ -1,0 +1,27 @@
+<body >
+<h1>Fizz Buzz Series Test</h1>
+
+
+
+
+<form>
+ 
+  <input  type="text" id="randomNumber" class="circle-label" name="randomNumber" 
+  [(ngModel)]="randomNumber" (click)="generateRandom()"  readonly>
+
+  <br>
+  <div class="inp-border a2">
+    <input  class = "input" type="number" id="limit" [(ngModel)]="limit" name="limit"
+     placeholder="Insert max number" (ngModelChange)="generateSeries()" >
+  </div>
+  <br><br>
+  <!-- <button [disabled]="!formIsValid()" (click)="generateSeries()">Generate Series</button> -->
+</form>   
+<br><br>
+<div class="square-container">
+  <div *ngFor="let element of seriesFB" class="square" 
+     [style.background]="getSquareColor(element)">
+     <span >{{ element }}</span>
+  </div>
+</div>
+</body>
